@@ -438,35 +438,65 @@ transform: translateX(0);
 .about-me {
     max-width: 1000px;
     margin: 0 auto;
+    background-color: #aed2dd;
+    margin-bottom: 1cm;
 }
+
+.about-me{
+ 
+        perspective: 1000px;
+    
+}
+.about-me:hover {
+        transform-style: preserve-3d;
+        animation: rotateHeader 5s infinite linear;
+    }
+    
+    @keyframes rotateHeader {
+        from {
+            transform: rotateY(80);
+        }
+        to {
+            transform: rotateY(30deg);
+        }
+    }
+    
+
 
 .about-me__img {
     box-shadow: var(--bs);
 }
 
 @media (min-width: 600px) {
+
     .about-me {
         display: grid;
+        
         grid-template-columns: 1fr 200px;
         grid-template-areas: 
             "title img"
             "subtitle img"
             "text img";
         grid-column-gap: 2em;
+        color: #8897db;
+        font-weight: 900;
+        border-radius: 14px;
     }
     
     .section__title--about {
         grid-area: title;
+        color: #8897db;
     }
     
     .section__subtitle--about {
         grid-column: 1 / -1;
         grid-row: 2;
-        position: relative;
+        position: center;
         left: -1em;
         width: calc(100% + 2em);
         padding-left: 1em;
         padding-right: calc(200px + 4em);
+
     }
     
     .about-me__img {
@@ -484,9 +514,10 @@ transform: translateX(0);
         transition: opacity 0.5s ease, transform 0.5s ease;
     }
     
-    .about-me__body p.slide-in {
+    .about-me__body {
         opacity: 1;
         transform: translateY(0);
+        color: white;
     }
     
     /* footer */
